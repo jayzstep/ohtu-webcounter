@@ -5,7 +5,7 @@ Library  SeleniumLibrary
 ${SERVER}    localhost:5001
 ${DELAY}     0.5 seconds
 ${HOME_URL}  http://${SERVER}
-${BROWSER}   firefox
+${BROWSER}   chrome
 ${HEADLESS}  false
 
 *** Keywords ***
@@ -14,6 +14,7 @@ Open And Configure Browser
         ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
     ELSE IF    $BROWSER == 'firefox'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+        ${service_options}=    Create Dictionary    service_log_path=${NONE}
     END
     IF  $HEADLESS == 'true'
         Set Selenium Speed  0
@@ -22,4 +23,3 @@ Open And Configure Browser
         Set Selenium Speed  ${DELAY}
     END
     Open Browser  browser=${BROWSER}  options=${options}
-   
