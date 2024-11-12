@@ -1,0 +1,9 @@
+geckodriver*.log
+*.tmp
+__pycache__
+.pytest_cache
+.venv
+.coverage
+htmlcov
+
+.DS_Store

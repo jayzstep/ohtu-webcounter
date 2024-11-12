@@ -14,7 +14,6 @@ Open And Configure Browser
         ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
     ELSE IF    $BROWSER == 'firefox'
         ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
-        ${service_options}=    Create Dictionary    service_log_path=${NONE}
     END
     IF  $HEADLESS == 'true'
         Set Selenium Speed  0
