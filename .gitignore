@@ -5,5 +5,5 @@ __pycache__
 .venv
 .coverage
 htmlcov
-
+selenium-screenshot*.png
 .DS_Store
